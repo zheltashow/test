@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The form</title>
+    <meta charset="UTF-8" />
+    <style>
+      /* Please add the CSS here */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f8f8f8;
+      }
+      .container {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .container h1 {
+        color: #1a73e8;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .container label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .container input[type="text"] {
+        width: calc(100% - 22px); /* To account for padding and border */
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .container input[type="submit"] {
+        background-color: #1a73e8;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+      }
+      .container input[type="submit"]:hover {
+        background-color: #1558b0;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        // Please add the JavaScript code here
+        document
+          .getElementById("numberForm")
+          .addEventListener("submit", function (event) {
+            var numberInput = document.getElementById("number").value;
+            if (numberInput < 10) {
+              alert("Please enter a number greater than 10.");
+              event.preventDefault();
+            }
+          });
+      };
+    </script>
+  </head>
+
+  <body>
+    <!--Please add the HTML here-->
+    <div class="container">
+      <h1>Form</h1>
+      <form id="numberForm">
+        <label for="number">Number</label>
+        <input
+          type="text"
+          id="number"
+          name="number"
+          placeholder="Please enter a number"
+          required
+        />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
